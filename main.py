@@ -1,19 +1,34 @@
 from tabulate import tabulate
 
-def format(eq):
+def format():
 
+
+    eq = input('Enter a propositional logic formula: ')    
     table = []
+
+    convert = {'NOT':['not','negate','negation','^'],
+               'AND':['and','conjunction'],
+               'OR':['or','disjunction'],
+               'IMPLIES':['implies','implication'],
+               'IMPLIES2':['biconditional','biimplies','double implies','<=>','<->']}
     
-    eq = eq.replace('or', 'OR')
-    eq = eq.replace('and', 'AND')
-    eq = eq.replace('not', 'NOT')
-    eq = eq.replace('implies', 'IMPLIES')
     
     eq_list = eq.split()
-    
-    print(eq_list)
+
+    for i in range(len(eq_list)):
+        for k,v in convert.items():
+            if eq_list[i] in v:
+                eq_list[i] = k
 
     alphabet = list('abcdefghijklmnopqrstuvwxyz')
+
+    eq = ' '.join(eq_list)
+    for i in eq_list:
+        if i not in convert:
+            if i not in alphabet:
+                return 'Invalid symbols!'
+
+
     n = 0
     variables = []
     for i in range(len(eq_list)):
@@ -21,9 +36,12 @@ def format(eq):
             
             variables.append(eq_list[i])
             alphabet.remove(eq_list[i])
-    print(variables)
+ 
     n=len(variables)
     
+
+    if n > 3:
+        return 'Please use a maximum of 3 variables!'
     if n == 2:
         
         a2,b2,c2,d2 = eq,eq,eq,eq
@@ -129,11 +147,29 @@ def format(eq):
                     i[j-1] ='-'
                     i[j+1] = '-'
                     break
-                
+    for i in table:
+        while '-' in i:
+            i.remove('-')
+    
+    for i in table: # IMPLES
+        while 'IMPLIES2' in i:
+            while '-' in i:
+                i.remove('-')
+            for j in range(len(i)):
+                if i[j] == 'IMPLIES2':
+                    if i[j-1] == i[j+1]:
+                        i[j] = 'T'
+                    else:
+                        i[j] = 'F'
+                    i[j-1] ='-'
+                    i[j+1] = '-'
+                    break
 
     for i in table:
         while '-' in i:
             i.remove('-')
+
+
 
     dict = {}
     if n == 2:
@@ -145,7 +181,7 @@ def format(eq):
     
     data = [[k,''.join(v)] for k,v in dict.items()]
 
-    final_touch_dict = {'AND':'∧','OR':'∨','NOT':'¬','IMPLIES':'⇒'}
+    final_touch_dict = {'AND':'∧','OR':'∨','NOT':'¬','IMPLIES':'⇒','IMPLIES2':'⇔'}
 
     final_touch = eq.split()
     for i in range(len(final_touch)):
@@ -154,12 +190,14 @@ def format(eq):
     eq = ' '.join(final_touch)
 
     headers = ['p | q | r', eq]
+
+    print('The proposition')
     if n == 2:
         return tabulate(data, headers=[variables[0] + '|' + variables[1], eq])
     if n == 3:
         return tabulate(data, headers=[variables[0] + '|' + variables[1] + '|' + variables[2], eq])
 
-
+print(format())
 
 
     
