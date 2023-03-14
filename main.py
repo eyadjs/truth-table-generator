@@ -144,7 +144,7 @@ def format(eq):
             dict[combos_3[i]] = table[i]
     
     data = [[k,''.join(v)] for k,v in dict.items()]
-    print(data)
+
     final_touch_dict = {'AND':'∧','OR':'∨','NOT':'¬','IMPLIES':'⇒'}
 
     final_touch = eq.split()
