@@ -5,7 +5,7 @@ from parantheses import valid_parantheses
 def compute():
 
     x = input('Enter your logical statement: ')
-    eq = transform(x) #eg. ([ ['T', 'AND', 'T', ')'], ... , ... , ...],
+    eq = transform(x) # ([ ['T', 'AND', 'T', ')'], ... , ... , ...],
                             # ['p', 'and', 'q', ')'],
                             # ['p','q'] ])
 
