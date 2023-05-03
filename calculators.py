@@ -68,7 +68,7 @@ def regular_calculator(table):
         while '-' in i:
             i.remove('-')
     
-    for i in table: # BI-IMPLIES
+    for i in table: # BIIMPLIES
         while 'IMPLIES2' in i:
             while '-' in i:
                 i.remove('-')
