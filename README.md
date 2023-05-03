@@ -6,7 +6,7 @@
 
 ### When the user runs `main.py`, they are prompted with the following:
 
-        `Enter your logical statement:`
+         Enter your logical statement:
         
         
 ### If they enter `not p and q` for example, the following truth table is reproduced:
