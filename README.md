@@ -1,5 +1,5 @@
 # Truth Table Generator
-## A terminal application built using Python 3.10 that prompts the user for a logical propositional statement and spits out the corresponding truth table.
+## A terminal application built using Python 3.10 that prompts the user for a logical propositional statement and outputs the corresponding truth table.
 
 * The logical operations supported include negation, conjunction, disjunction, implication, and bi-implication.
 
