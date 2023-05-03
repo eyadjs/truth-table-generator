@@ -11,9 +11,9 @@
         
 ### If they enter `not p and q` for example, the following truth table is reproduced:
 
-        `p | q    ¬ p ∧ q
+        `p | q    ¬ p ∧ q 
          -------  ---------
          T | T    F
          T | F    F
          F | T    T
-         F | F    F
+         F | F    F                 `
