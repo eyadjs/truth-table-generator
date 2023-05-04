@@ -1,5 +1,5 @@
-def regular_calculator(table):
-    
+ 
+def negation(table):
     for i in table: # NEGATION
         while 'NOT' in i:
             while '-' in i:
@@ -16,7 +16,9 @@ def regular_calculator(table):
         while '-' in i:
             i.remove('-')
 
+    return table
 
+def conjunction(table):
     for i in table: # AND
         while 'AND' in i:
             while '-' in i:
@@ -34,6 +36,9 @@ def regular_calculator(table):
         while '-' in i:
             i.remove('-')
 
+    return table
+
+def disjunction(table):
     for i in table: # OR
         while 'OR' in i:
             while '-' in i:
@@ -50,7 +55,10 @@ def regular_calculator(table):
     for i in table:
         while '-' in i:
             i.remove('-')
-    
+
+    return table
+
+def implication(table):
     for i in table: # IMPLES
         while 'IMPLIES' in i:
             while '-' in i:
@@ -68,6 +76,9 @@ def regular_calculator(table):
         while '-' in i:
             i.remove('-')
     
+    return table
+
+def biimplication(table):
     for i in table: # BIIMPLIES
         while 'IMPLIES2' in i:
             while '-' in i:
@@ -84,5 +95,16 @@ def regular_calculator(table):
     for i in table:
         while '-' in i:
             i.remove('-')
+    
+    return table
+
+
+def regular_calculator(table):
+
+    table = negation(table)
+    table = conjunction(table)
+    table = disjunction(table)
+    table = implication(table)
+    table = biimplication(table)
 
     return table
