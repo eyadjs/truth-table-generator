@@ -1,3 +1,4 @@
+from calculators import *
 def valid_parantheses(x):
 
     eq_list = format(x)[1] # eg. ['(,'p','and','q',')']
@@ -28,3 +29,27 @@ def valid_parantheses(x):
             return False
         
     return stack == []
+
+
+def parentheses_calculator(test):
+
+    while '(' in test:
+
+        op_i = 0 # deepest opening index
+        cl_i = 0 # corresponding closing index
+        for i in range(len(test)):
+            if test[i] == '(':
+                op_i = i
+            if test[i] == ')':
+                cl_i = i
+                break
+
+
+        test = test[:op_i+1] + regular_calculator(test[op_i+1:cl_i]) + test[cl_i:]
+
+        if cl_i - op_i == 2:
+            test[cl_i], test[op_i] = '-','-'
+        while '-' in test:
+            test.remove('-')
+    
+    return test

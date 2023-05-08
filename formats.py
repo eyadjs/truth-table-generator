@@ -1,5 +1,6 @@
 from calculators import regular_calculator
 from tabulate import tabulate
+from parentheses import *
 
 def transform(x):
     
@@ -104,7 +105,16 @@ def makeTable(x):
 
 
 
-    table = regular_calculator(eq[0]) # [['T'], ['F'], ['F'], ['F']]
+    table = [] # [['T'], ['F'], ['F'], ['F']]
+
+    if '(' in eq[0][1]:
+        for i in range(len(eq[0])):
+            eq[0][i] = parentheses_calculator(eq[0][i])
+
+
+    for i in range(len(eq[0])):
+        table.append(regular_calculator(eq[0][i]))
+
 
 
 
@@ -143,3 +153,4 @@ def makeTable(x):
     if len(variables) == 3:
         table_content_3 = [[combos_3[i], ''.join(table[i])] for i in range(len(table))]
         return tabulate(table_content_3, headers)
+

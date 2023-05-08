@@ -1,6 +1,6 @@
  
-def negation(table):
-    for i in table: # NEGATION
+def negation(i):
+
         while 'NOT' in i:
             while '-' in i:
                 i.remove('-')
@@ -12,14 +12,14 @@ def negation(table):
                         i[j+1] = 'F'
                     i[j] = '-'
                     break
-    for i in table:
+        
         while '-' in i:
             i.remove('-')
 
-    return table
+        return i
 
-def conjunction(table):
-    for i in table: # AND
+
+def conjunction(i):
         while 'AND' in i:
             while '-' in i:
                 i.remove('-')
@@ -32,14 +32,14 @@ def conjunction(table):
                     i[j-1] ='-'
                     i[j+1] = '-'
                     break
-    for i in table:
+
         while '-' in i:
             i.remove('-')
 
-    return table
+        return i
 
-def disjunction(table):
-    for i in table: # OR
+def disjunction(i):
+
         while 'OR' in i:
             while '-' in i:
                 i.remove('-')
@@ -51,15 +51,14 @@ def disjunction(table):
                         i[j] = 'T'
                     i[j-1] ='-'
                     i[j+1] = '-'
-                    break
-    for i in table:
+
         while '-' in i:
             i.remove('-')
 
-    return table
+        return i
 
-def implication(table):
-    for i in table: # IMPLES
+def implication(i):
+
         while 'IMPLIES' in i:
             while '-' in i:
                 i.remove('-')
@@ -72,14 +71,14 @@ def implication(table):
                     i[j-1] ='-'
                     i[j+1] = '-'
                     break
-    for i in table:
+
         while '-' in i:
             i.remove('-')
-    
-    return table
+        
+        return i
 
-def biimplication(table):
-    for i in table: # BIIMPLIES
+def biimplication(i):
+
         while 'IMPLIES2' in i:
             while '-' in i:
                 i.remove('-')
@@ -92,11 +91,11 @@ def biimplication(table):
                     i[j-1] ='-'
                     i[j+1] = '-'
                     break
-    for i in table:
+
         while '-' in i:
             i.remove('-')
-    
-    return table
+         
+        return i
 
 
 def regular_calculator(table):
