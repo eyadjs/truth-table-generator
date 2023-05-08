@@ -16,4 +16,18 @@
          T | T    F
          T | F    F
          F | T    T
-         F | F    F                 
+         F | F    F        
+         
+         
+#### More complicated expressions can be entered, such as `((not p) or q) implies ((p and q) or (not r))`:
+
+         p | q | r    ( ( ¬ p ) ∨ q ) ⇒ ( ( p ∧ q ) ∨ ( ¬ r ) )
+         -----------  -------------------------------------------
+         T | T | T    T
+         T | T | F    T
+         T | F | T    T
+         T | F | F    T
+         F | T | T    F
+         F | T | F    T
+         F | F | T    F
+         F | F | F    T
