@@ -2,8 +2,13 @@
 ### A terminal application built using Python 3.10 that prompts the user for a logical propositional statement and outputs the corresponding truth table.
 
 * The logical operations supported include negation, conjunction, disjunction, implication, and bi-implication.
+## Requirements
+#### This project requires the tabulate library to be installed. If you don't have it installed, you can install it by running the following command:
 
-
+         `pip install tabulate`
+         
+         
+## Usage
 #### When the user runs `main.py`, they are prompted with the following:
 
          Enter your logical statement:
