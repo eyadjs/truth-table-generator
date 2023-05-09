@@ -5,7 +5,7 @@
 ## Requirements
 #### This project requires the tabulate library to be installed. If you don't have it installed, you can install it by running the following command:
 
-         `pip install tabulate`
+         pip install tabulate
          
          
 ## Usage
