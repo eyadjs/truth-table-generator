@@ -36,3 +36,6 @@
          F | T | F    T
          F | F | T    F
          F | F | F    T
+
+## Contributing
+#### If you would like to contribute to this project, please fork the repository and create a pull request with your changes. I welcome contributions of all kinds, from bug fixes to new features.
