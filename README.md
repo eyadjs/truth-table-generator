@@ -21,6 +21,10 @@
 
 #### The former option tells the user how to use the app:
 
+         Enter a propositional statement using up to 3 variables in the alphabet.
+         For example: p and (q or r)
+
+
          Accepted inputs for operations are as follows:
 
          Operation       Accepted Inputs
