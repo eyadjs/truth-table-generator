@@ -16,7 +16,7 @@
 #### When the user runs `main.py`, they are prompted with the following:
 
          Enter 'h' for help menu
-         Enter 'p' to generate a truth table.
+         Enter 'p' to generate a truth table
 
 
 #### The former option tells the user how to use the app:

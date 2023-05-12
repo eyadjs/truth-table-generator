@@ -8,7 +8,7 @@ def compute():
 
     while True:
 
-        print("\n\nEnter 'h' for help menu\nEnter 'p' to generate a truth table.")
+        print("\n\nEnter 'h' for help menu\nEnter 'p' to generate a truth table")
 
         key = input()
         if key.lower() == 'h':
