@@ -1,14 +1,14 @@
 from calculators import regular_calculator
 from tabulate import tabulate
-from parentheses import *
+from parentheses import parentheses_calculator
 
 def transform(x):
     
     table = []
 
-    convert = {'NOT':['not','negate','negation','~'],
-               'AND':['and','conjunction','^'],
-               'OR':['or','disjunction','V'],
+    convert = {'NOT':['not','negate','negation','~','*'],
+               'AND':['and','conjunction','^','&'],
+               'OR':['or','disjunction','V','|'],
                'IMPLIES':['implies','implication','->','=>'],
                'IMPLIES2':['biconditional','biimplies','double implies','<=>','<->']}
     
@@ -35,13 +35,13 @@ def transform(x):
     final_split = eq_list # not used, purely so ['p', 'or', '(', 'q'] can be returned at the end
     
 
-    alphabet = list('abcdefghijklmnopqrstuvwxyz')
+    alphabet = list('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ')
 
     eq = ' '.join(eq_list)
     for i in eq_list:
         if i not in convert:
             if i not in alphabet:
-                pass
+                pass # ???????????????????????????????
                 
 
 
@@ -58,6 +58,7 @@ def transform(x):
 
     if n in (0,1) or n > 3:
         return 'Please use 2 or 3 distinct variables!'
+    
     if n == 2:
         
         a2,b2,c2,d2 = eq,eq,eq,eq
@@ -154,3 +155,19 @@ def makeTable(x):
         table_content_3 = [[combos_3[i], ''.join(table[i])] for i in range(len(table))]
         return tabulate(table_content_3, headers)
 
+
+
+
+
+
+
+
+help_table_headers = ["Operation","Accepted Inputs"]
+help_table_operations = ["Negation","Conjunction","Disjunction","Implication","Bi-implication" ]
+help_table_inputs = ['not, negate, negation, ~, *',
+                    'and, conjunction, ^, &,'
+                    ,'or, disjunction, V, |',
+                    'implies, implication, ->, =>',
+                    'biconditional, biimplies, double implies, <=>, <->']
+help_table_contents = [[help_table_operations[i], ''.join(help_table_inputs[i])] for i in range(len(help_table_inputs))]
+help_table = 'Please use 2 or 3 lowercase variables of your choice.' + '\n\n' + 'Accepted inputs for operations are as follows:\n'+ tabulate(help_table_contents, help_table_headers)

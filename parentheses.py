@@ -1,7 +1,9 @@
 from calculators import *
+
+
 def valid_parentheses(x):
 
-    eq_list = format(x)[1] # eg. ['(,'p','and','q',')']
+    eq_list = x # eg. ['(,'p','and','q',')']
 
     if ')(' in eq_list:
         return False
@@ -53,3 +55,4 @@ def parentheses_calculator(test):
             test.remove('-')
     
     return test
+
