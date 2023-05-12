@@ -170,4 +170,4 @@ help_table_inputs = ['not, negate, negation, ~, *',
                     'implies, implication, ->, =>',
                     'biconditional, biimplies, double implies, <=>, <->']
 help_table_contents = [[help_table_operations[i], ''.join(help_table_inputs[i])] for i in range(len(help_table_inputs))]
-help_table = 'Please use 2 or 3 lowercase variables of your choice.' + '\n\n' + 'Accepted inputs for operations are as follows:\n'+ tabulate(help_table_contents, help_table_headers)
+help_table = '\n\nEnter a propositional statement using up to 3 variables in the alphabet.\nFor example: p and (q or r)' + '\n\n\nAccepted inputs for operations are as follows:\n\n'+ tabulate(help_table_contents, help_table_headers)
