@@ -19,7 +19,7 @@
          Enter 'p' to generate a truth table.
 
 
-#### The former option tells the user how to use the app:
+#### The former option give the user instructions:
 
          Enter a propositional statement using up to 3 variables in the alphabet.
          For example: p and (q or r)
@@ -36,7 +36,7 @@
          Bi-implication  biconditional, biimplies, double implies, <=>, <->
          
          
-#### The latter option allows the user to enter their propositional statement:
+#### The latter option allows the user to enter their logical statement:
 
         Enter your logical statement:
         
