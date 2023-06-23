@@ -1,25 +1,20 @@
 from calculators import *
 
-
 def valid_parentheses(x):
 
     eq_list = x # eg. ['(,'p','and','q',')']
 
     if ')(' in eq_list:
         return False
-
     
     only_p = []
     for i in eq_list:
         if i in['(',')']:
             only_p.append(i) # eg. ['(',')']
     
-
     stack = []
     lookup = {')':'('}
 
-
-    
     for p in only_p:
         if p == ')(':
             return False
@@ -31,7 +26,6 @@ def valid_parentheses(x):
             return False
         
     return stack == []
-
 
 def parentheses_calculator(test):
 
@@ -46,7 +40,6 @@ def parentheses_calculator(test):
                 cl_i = i
                 break
 
-
         test = test[:op_i+1] + regular_calculator(test[op_i+1:cl_i]) + test[cl_i:]
 
         if cl_i - op_i == 2:
@@ -55,4 +48,3 @@ def parentheses_calculator(test):
             test.remove('-')
     
     return test
-
