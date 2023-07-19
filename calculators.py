@@ -1,6 +1,5 @@
- 
 def negation(i):
-
+        
         while 'NOT' in i:
             while '-' in i:
                 i.remove('-')
@@ -18,8 +17,8 @@ def negation(i):
 
         return i
 
-
 def conjunction(i):
+        
         while 'AND' in i:
             while '-' in i:
                 i.remove('-')
@@ -39,7 +38,7 @@ def conjunction(i):
         return i
 
 def disjunction(i):
-
+        
         while 'OR' in i:
             while '-' in i:
                 i.remove('-')
@@ -58,7 +57,7 @@ def disjunction(i):
         return i
 
 def implication(i):
-
+        
         while 'IMPLIES' in i:
             while '-' in i:
                 i.remove('-')
@@ -78,7 +77,7 @@ def implication(i):
         return i
 
 def biimplication(i):
-
+        
         while 'IMPLIES2' in i:
             while '-' in i:
                 i.remove('-')
