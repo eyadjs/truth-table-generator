@@ -11,14 +11,16 @@ def negation(i):
                         i[j+1] = 'F'
                     i[j] = '-'
                     break
-        
         while '-' in i:
             i.remove('-')
-
         return i
 
 def conjunction(i):
+<<<<<<< HEAD
         
+=======
+ 
+>>>>>>> c80e629a0be31a159d5c9dccf540d9292408812c
         while 'AND' in i:
             while '-' in i:
                 i.remove('-')
@@ -31,14 +33,16 @@ def conjunction(i):
                     i[j-1] ='-'
                     i[j+1] = '-'
                     break
-
         while '-' in i:
             i.remove('-')
-
         return i
 
 def disjunction(i):
+<<<<<<< HEAD
         
+=======
+ 
+>>>>>>> c80e629a0be31a159d5c9dccf540d9292408812c
         while 'OR' in i:
             while '-' in i:
                 i.remove('-')
@@ -50,10 +54,8 @@ def disjunction(i):
                         i[j] = 'T'
                     i[j-1] ='-'
                     i[j+1] = '-'
-
         while '-' in i:
             i.remove('-')
-
         return i
 
 def implication(i):
@@ -90,12 +92,9 @@ def biimplication(i):
                     i[j-1] ='-'
                     i[j+1] = '-'
                     break
-
         while '-' in i:
             i.remove('-')
-         
         return i
-
 
 def regular_calculator(table):
 

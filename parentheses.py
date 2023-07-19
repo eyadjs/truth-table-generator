@@ -11,7 +11,11 @@ def valid_parentheses(x):
     for i in eq_list:
         if i in['(',')']:
             only_p.append(i) # eg. ['(',')']
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> c80e629a0be31a159d5c9dccf540d9292408812c
     stack = []
     lookup = {')':'('}
 
@@ -47,4 +51,8 @@ def parentheses_calculator(test):
         while '-' in test:
             test.remove('-')
     
+<<<<<<< HEAD
     return test
+=======
+    return test
+>>>>>>> c80e629a0be31a159d5c9dccf540d9292408812c
