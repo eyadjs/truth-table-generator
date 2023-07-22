@@ -16,11 +16,7 @@ def negation(i):
         return i
 
 def conjunction(i):
-<<<<<<< HEAD
         
-=======
- 
->>>>>>> c80e629a0be31a159d5c9dccf540d9292408812c
         while 'AND' in i:
             while '-' in i:
                 i.remove('-')
@@ -38,11 +34,7 @@ def conjunction(i):
         return i
 
 def disjunction(i):
-<<<<<<< HEAD
         
-=======
- 
->>>>>>> c80e629a0be31a159d5c9dccf540d9292408812c
         while 'OR' in i:
             while '-' in i:
                 i.remove('-')
