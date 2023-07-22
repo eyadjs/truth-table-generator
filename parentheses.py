@@ -27,23 +27,26 @@ def valid_parentheses(x):
     return stack == []
 
 def parentheses_calculator(test):
-
-    while '(' in test:
-
-        op_i = 0 # deepest opening index
-        cl_i = 0 # corresponding closing index
-        for i in range(len(test)):
-            if test[i] == '(':
-                op_i = i
-            if test[i] == ')':
-                cl_i = i
-                break
-
-        test = test[:op_i+1] + regular_calculator(test[op_i+1:cl_i]) + test[cl_i:]
-
-        if cl_i - op_i == 2:
-            test[cl_i], test[op_i] = '-','-'
-        while '-' in test:
-            test.remove('-')
     
-    return test
+    if '(' not in test:
+        return regular_calculator(test)
+
+    op_i = 0  # deepest opening index
+    cl_i = 0  # corresponding closing index
+    for i in range(len(test)):
+        if test[i] == '(':
+            op_i = i
+        if test[i] == ')':
+            cl_i = i
+            break
+
+    sub_expression_result = regular_calculator(test[op_i + 1:cl_i])
+    test = test[:op_i] + sub_expression_result + test[cl_i + 1:]
+
+    if cl_i - op_i == 2:
+        test = test[:op_i] + '-' + test[cl_i + 1:]
+
+    while '-' in test:
+        test = test.replace('-', '')
+
+    return parentheses_calculator(test)
