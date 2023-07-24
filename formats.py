@@ -5,12 +5,12 @@ def transform(x):
     
     table = []
 
-    convert = {'NOT':['not','negate','negation','~','*','¬'],
-               'AND':['and','conjunction','^','&','∧'],
-               'OR':['or','disjunction','V','|','∨'],
-               'IMPLIES':['implies','implication','->','=>','⇒','→'],
-               'IMPLIES2':['biconditional','biimplies','double implies','<=>','<->','⇔','↔']}
-    {'AND':'∧','OR':'∨','NOT':'¬','IMPLIES':'⇒','IMPLIES2':'⇔'}
+    convert = {'¬':['not','negate','negation','~','*','NOT','¬'],
+               '∧':['and','conjunction','^','&','∧','AND'],
+               '∨':['or','disjunction','V','|','∨'],
+               '⇒':['implies','implication','->','=>','⇒','→','IMPLIES'],
+               '⇔':['biconditional','biimplies','<=>','<->','⇔','↔']}
+    # {'AND':'∧','OR':'∨','NOT':'¬','IMPLIES':'⇒','IMPLIES2':'⇔'}
     
     x = list(x)
     for i in range(len(x)):
@@ -40,13 +40,10 @@ def transform(x):
     variables = []
     for i in range(len(eq_list)):
         if eq_list[i] in alphabet:
-            
             variables.append(eq_list[i])
             alphabet.remove(eq_list[i])
  
     n=len(variables)
-    if n in (0,1) or n > 3:
-        return 'Please use 2 or 3 distinct variables!'
     
     if n == 2:
         a2,b2,c2,d2 = eq,eq,eq,eq

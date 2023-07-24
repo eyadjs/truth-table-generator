@@ -1,10 +1,10 @@
 def negation(i):
         
-        while 'NOT' in i:
+        while '¬' in i:
             while '-' in i:
                 i.remove('-')
             for j in range(len(i)):
-                if i[j] == 'NOT':
+                if i[j] == '¬':
                     if i[j+1] == 'F':
                         i[j+1] = 'T'
                     else:
@@ -17,11 +17,11 @@ def negation(i):
 
 def conjunction(i):
         
-        while 'AND' in i:
+        while '∧' in i:
             while '-' in i:
                 i.remove('-')
             for j in range(len(i)):
-                if i[j] == 'AND':
+                if i[j] == '∧':
                     if i[j-1] =='T' and i[j+1] == 'T':
                         i[j] = 'T'
                     else:
@@ -35,11 +35,11 @@ def conjunction(i):
 
 def disjunction(i):
         
-        while 'OR' in i:
+        while '∨' in i:
             while '-' in i:
                 i.remove('-')
             for j in range(len(i)):
-                if i[j] == 'OR':
+                if i[j] == '∨':
                     if i[j-1] =='F' and i[j+1] == 'F':
                         i[j] = 'F'
                     else:
@@ -52,11 +52,11 @@ def disjunction(i):
 
 def implication(i):
         
-        while 'IMPLIES' in i:
+        while '⇒' in i:
             while '-' in i:
                 i.remove('-')
             for j in range(len(i)):
-                if i[j] == 'IMPLIES':
+                if i[j] == '⇒':
                     if i[j-1] == 'T' and i[j+1] == 'F':
                         i[j] = 'F'
                     else:
@@ -72,11 +72,11 @@ def implication(i):
 
 def biimplication(i):
         
-        while 'IMPLIES2' in i:
+        while '⇔' in i:
             while '-' in i:
                 i.remove('-')
             for j in range(len(i)):
-                if i[j] == 'IMPLIES2':
+                if i[j] == '⇔':
                     if i[j-1] == i[j+1]:
                         i[j] = 'T'
                     else:
@@ -90,6 +90,7 @@ def biimplication(i):
 
 def regular_calculator(table):
 
+    # in the default order of precedence 
     table = negation(table)
     table = conjunction(table)
     table = disjunction(table)

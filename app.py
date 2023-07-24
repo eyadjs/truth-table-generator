@@ -24,7 +24,7 @@ def calculate():
             error = "Field is empty."
             return render_template("index.html", error=error)
 
-        
+        error = "Please correctly format your statement. Be sure to correctly place brackets and use 2 or 3 variables."
         try:
             output = makeTable(input)
 
@@ -43,15 +43,14 @@ def calculate():
             for i in range(len(preset_combos)):
                 data.append((preset_combos[i], truth_values[i]))
         except:
-            error = "Please correctly format your statement. Be sure to correctly place brackets and use 2 or 3 variables."
             return render_template("index.html", error=error)
         
-        
+        if len(truth_values[0]) != 1: return render_template("index.html", error=error)
         return render_template("index.html", data=data, headings=headings)
     
     return render_template("index.html")
 
 
 if __name__ == "__main__":
-    app.debug = True
+    # app.debug = True
     app.run()
