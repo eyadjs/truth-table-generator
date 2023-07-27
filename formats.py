@@ -102,31 +102,28 @@ def makeTable(x):
 
     variables_table = variables_table[:-3] # 'p | q'
             
-    combos_2,combos_3 = [],[] # preset T/F combos eg. TT | TF | ...
+    combos_2,combos_3 = [],[] # preset T/F combos eg. [T,F], [F,T] ...
     for i in ['T','F']:
         for j in ['T','F']:
-            combos_2.append(i + ' | ' + j)
+            combos_2.append([i, j])
     for i in ['T','F']:
         for j in ['T','F']:
             for k in ['T','F']:
-                combos_3.append(i + ' | ' + j + ' | ' + k)
+                combos_3.append([i, j, k])
     
-    headers = [variables_table, eq_pretty]
+    headers = [variables, eq_pretty]
+
     if len(variables) == 2:
         table_content_2 = [[combos_2[i], ''.join(table[i])] for i in range(len(table))]
+        for i in range(len(table_content_2)):
+            table_content_2[i] = [table_content_2[i][0][0], table_content_2[i][0][1], table_content_2[i][1]]
+        
+        headers = [headers[0][0], headers[0][1], headers[1]]
+            
         return (table_content_2, headers)
     if len(variables) == 3:
         table_content_3 = [[combos_3[i], ''.join(table[i])] for i in range(len(table))]
+        for i in range(len(table_content_3)):
+            table_content_3[i] = [table_content_3[i][0][0], table_content_3[i][0][1], table_content_3[i][0][2] ,table_content_3[i][1]]
+        headers = [headers[0][0], headers[0][1], headers[0][2], headers[1]]
         return (table_content_3, headers)
-
-
-# help menu stuff
-help_table_headers = ["Operation","Accepted Inputs"]
-help_table_operations = ["Negation","Conjunction","Disjunction","Implication","Bi-implication" ]
-help_table_inputs = ['not, negate, negation, ~, *',
-                    'and, conjunction, ^, &,'
-                    ,'or, disjunction, V, |',
-                    'implies, implication, ->, =>',
-                    'biconditional, biimplies, double implies, <=>, <->']
-help_table_contents = [[help_table_operations[i], ''.join(help_table_inputs[i])] for i in range(len(help_table_inputs))]
-# help_table = '\n\nEnter a propositional statement using up to 3 variables in the alphabet.\nFor example: p and (q or r)' + '\n\n\nAccepted inputs for operations are as follows:\n\n'+ tabulate(help_table_contents, help_table_headers)
