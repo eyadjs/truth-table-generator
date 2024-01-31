@@ -1,8 +1,10 @@
 # Truth Table Generator
-### A terminal application built using Python 3.10 that prompts the user for a logical propositional statement and outputs the corresponding truth table.
+### An application using Python 3.10 that prompts the user for a logical propositional statement and outputs the corresponding truth table.
 
 * The logical operations supported include negation, conjunction, disjunction, implication, and bi-implication.
 
+## Hosting
+#### This project is currently being hosted and can be tested [here](https://truth-table-generator.vercel.app/). To use the terminal application version, keep reading.
 
 
 ## Requirements
